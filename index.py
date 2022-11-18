@@ -75,35 +75,26 @@ def investigate(current_room):
 def player_turn(current_room):
     print(current_room.description)
     player_action = input("What would you like to do? > ")
-
     if(player_action == "n"):
-  
         if(current_room.north["is_possible"]):
-  
             change_rooms(current_room.north["next_room"])
         else:
             print("You cannot go that way " + current_room.north["reason"])
             player_turn(current_room)
-
         
     if(player_action == "s"):
-   
         if(current_room.south["is_possible"]):
-      
             change_rooms(current_room.south["next_room"])
         else:
             print("You cannot go that way " + current_room.south["reason"])
             player_turn(current_room)
     if(player_action == "e"):
-    
         if(current_room.east["is_possible"]):
-      
             change_rooms(current_room.east["next_room"])
         else:
             print("You cannot go that way " + current_room.east["reason"])
             player_turn(current_room)
     if(player_action == "w"):
-    
         if(current_room.west["is_possible"]):
             change_rooms(current_room.west["next_room"])
         else:
@@ -116,6 +107,16 @@ def player_turn(current_room):
         player_turn(current_room)
     if(player_action == "q"):
         print("Goodbye!")
+
+
+
+
+
+
+
+
+
+
 
 
 def start_game(current_room):
